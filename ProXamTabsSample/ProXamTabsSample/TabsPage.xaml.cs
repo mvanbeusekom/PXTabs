@@ -16,8 +16,15 @@ namespace ProXamTabsSample
 		public TabsPage ()
 		{
 			InitializeComponent ();
-            SetTabs();
+            
             tabsView.TabSelectedCommand = new Command<PXTab>(TabSelected);
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            SetTabs();
         }
 
         private void TabSelected(PXTab pxTab)
